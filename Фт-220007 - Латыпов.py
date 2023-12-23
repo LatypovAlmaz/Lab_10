@@ -7,30 +7,32 @@ logging.info("Логи для теста")
 while True:
     try:
         logging.info("Запрос числа N")
-        N = int(input('Введите натуральное число N : '))
+        N1 = input('Введите натуральное число N : ')
+        N = int(N1)
         if N < 1:
             print('Ошибка!!! Вы ввели ненатуральное число')
-            logging.error("Ошбика ввода N числа пользователем")
+            logging.error(f"Ошбика ввода N числа пользователем, пользователь ввел - {N}")
             continue
         logging.info(f"Число N введенное ползователем {N}")
         break
     except ValueError:
         print('Вы ввели что-то не то')
-        logging.error("Ошбика ввода N числа пользователем")
+        logging.error(f"Ошбика ввода N числа пользователем, пользователь ввел - {N1}")
 # Ввод числа k пользователем и проверка на ошибку
 while True:
     try:
         logging.info("Запрос числа k")
-        k = int(input('Введите натуральное число k: '))
+        k1 = input('Введите натуральное число k: ')
+        k = int(k1)
         if k < 1:
             print('Ошибка!!! Вы ввели ненатуральное число')
-            logging.error("Ошбика ввода k числа пользователем")
+            logging.error(f"Ошбика ввода k числа пользователем, пользователь ввел - {k}")
             continue
         logging.info(f"Число k введенное ползователем {k}")
         break
     except ValueError:
         print('Вы ввели что-то не то')
-        logging.error("Ошбика ввода k числа пользователем")
+        logging.error(f"Ошбика ввода k числа пользователем, пользователь ввел - {k1}")
 # Компьютер загадывате число
 rand = randrange(1, N + 1)
 logging.info(f"Число, которое компьютер загадал {rand}")
@@ -53,10 +55,11 @@ while True:
         if cc > k:
             break
         logging.info("Запрос угадать число")
-        ans = int(input(f'({cc} ' + f'попытка) Введите число от 1 до {N}: '))
+        ans1 = input(f'({cc} ' + f'попытка) Введите число от 1 до {N}: ')
+        ans = int(ans1)
         while ans < 1 or ans > N:
             print(f'Ошибка!!! Введите число входящее в диапазон от 1 до {N}')
-            logging.error("Ошбика ввода числа пользователем")
+            logging.error(f"Ошбика ввода числа пользователем, пользователь ввел - {ans}")
             ans = int(input(f'({cc} ' + f'попытка) Введите число от 1 до {N}: '))
         logging.info(f"{cc} " + "попытка - " + f"{ans}")
         if ans == rand:
@@ -79,7 +82,7 @@ while True:
             c += 1
     except ValueError:
         print('Вы ввели что-то не то')
-        logging.error("Ошбика ввода числа пользователем")
+        logging.error(f"Ошбика ввода числа пользователем, пользователь ввел - {ans1}")
         c = cc
 # Финальное сообщение
 if count == 1:
